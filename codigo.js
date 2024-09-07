@@ -49,13 +49,13 @@ function verificar(){
             }
             
     }    
-    
+    if(Number(fano.value) == 0 || Number(fano.value) == ano){
+        window.alert('Error: adicone o ano de nascimento!')
+    }else{
+    txtp.innerHTML = (`Detectamos ${genero} com ${idade} anos.`)
+    res.appendChild(img)}
 }   
-}
-if(Number(fano.value) == 0 || Number(fano.value) == ano){
-    window.alert('Error: adicone o ano de nascimento!')
-}else{
-txtp.innerHTML = (`Detectamos ${genero} com ${idade} anos.`)
-res.appendChild(img)
+
+
     
 }
