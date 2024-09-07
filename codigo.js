@@ -7,14 +7,14 @@ function verificar(){
     var img = document.createElement('img')
         img.setAttribute('id','foto')
     
-    
         
-    if(fano.value > ano){
+    if(fano.value > ano || fano.value < 1930){
         window.alert('[ERRO] Verifique os dados e tente novamente!')
     }else{
         var fsex = document.getElementsByName('radsex')
         var idade = ano - Number(fano.value)
         var genero = ' '
+        
         
         if(fsex[0].checked){
             genero = 'Homem'
@@ -47,13 +47,15 @@ function verificar(){
                 //idoso
                 img.setAttribute('src','imagens/idosa.png')
             }
-        }       
+            if(Number(fano.value) == 0 || Number(fano.value) == ano){
+                window.alert('Error: adicone o ano de nascimento!')
+            }else{
+            txtp.innerHTML = (`Detectamos ${genero} com ${idade} anos.`)
+            res.appendChild(img)
+        }   
+    }    
+        
 }
     
-    if(Number(fano.value) == 0 || Number(fano.value) == ano){
-        window.alert('Error: adicone o ano de nascimento!')
-    }else{
-    txtp.innerHTML = (`Detectamos ${genero} com ${idade} anos.`)
-    res.appendChild(img)
-}
+    
 }
